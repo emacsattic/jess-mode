@@ -40,7 +40,7 @@ Finally, tell Emacs to start 'jess-mode' whenever you visit a Jess
 source file:
 
   (setq auto-mode-alist
-        (append '(("\\.clp$" . jess-mode))))
+        (append auto-mode-alist '(("\\.clp$" . jess-mode))))
 
 To run an inferior Jess process you must first tell inf-jess how Jess
 should be started. Look at the documentation at the top of inf-jess.el
