@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="David Young">
+	<META NAME="CREATED" CONTENT="20000926;15230400">
+	<META NAME="CHANGEDBY" CONTENT="David Young">
+	<META NAME="CHANGED" CONTENT="20001004;12465200">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<P ALIGN=CENTER STYLE="margin-top: 0.17in; page-break-after: avoid"><IMG SRC="file:///opt/packages/office52/share/gallery/www-graf/men@work.gif" NAME="Graphic2" ALIGN=RIGHT WIDTH=66 HEIGHT=50 BORDER=0><FONT SIZE=4><FONT FACE="Times New Roman, serif"><B>This
+is </B><A HREF="http://sourceforge.net/projects/jess-mode"><B><FONT SIZE=4><FONT FACE="Times New Roman, serif">Jess
+Mode </FONT></FONT></B></A><B>- an Emacs environment for developing
+Java Expert System Shell (Jess) applications.</B></FONT></FONT></P>
+<P>Jess Mode is a collection of GNU Emacs Lisp files designed to
+facilitate the development of <A HREF="http://hertzberg.ca.sandia.gov/jess">Jess
+</A>applications. Currently, Jess Mode is at release 1.2 and is
+considered production software. However, enhancements are being made
+on a fairly regular basis; recent changes include much-improved
+font-lock support to accommodate Jess release 6.0.</P>
+<P>Jess Mode was written for GNU Emacs, releases 19.34 and newer; all
+new development has occurred with the 20.x versions, so those <B>old</B><SPAN STYLE="font-weight: medium">
+releases might no longer function</SPAN>. I've had a few requests for
+an Xemacs port; I looked into this but there appear to be significant
+differences between the two dialects, especially with syntax tables
+and the font-lock stuff. Right now I don't have time to work on an
+Xemacs implementation, but would be happy to incorporate patches.</P>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Contents</B></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=3 BGCOLOR="#e6e6e6">
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=50% BGCOLOR="#c0c0c0">
+				<P>Jess Editing Mode</P>
+			</TH>
+			<TH WIDTH=50%>
+				<P>Jess Interpreter Mode</P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P>A major mode for editing Jess source files. Based on
+				lisp-mode, jess-mode offers such niceties as full syntax
+				highlighting and special commands for evaluating expressions and
+				communicating with an embedded Jess interpreter.</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>An inferior mode used to connect a running Jess interpreter to
+				an Emacs buffer. This mode is derived from COMINT and offers
+				hooks to customize the way Jess is invoked, short-cuts for
+				evaluating Jess expressions, and a few other things.</P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TH WIDTH=50%>
+				<P ALIGN=LEFT>Getting Jess Mode</P>
+			</TH>
+			<TH WIDTH=50%>
+				<P ALIGN=LEFT>Useful References</P>
+			</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<DL>
+					<DD>Stable version is <A HREF="ftp://jess-mode.sourceforge.net/">here</A>.</DD></DL>
+			</TD>
+			<TD WIDTH=50%>
+				<DL>
+					<DD>The Jess home page is <A HREF="http://herzberg.ca.sandia.gov/jess">here</A></DD></DL>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<DL>
+					<DD>Development releases will appear here.</DD></DL>
+			</TD>
+			<TD WIDTH=50%>
+				<DL>
+					<DD>The GNU home page is <A HREF="http://www.gnu.org/">here</A>.</DD></DL>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<DL>
+					<DD><BR>
+					</DD></DL>
+			</TD>
+			<TD WIDTH=50%>
+				<DL>
+					<DD><BR>
+					</DD></DL>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Installation</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in">There's currently no automated
+installation process for Jess Mode, so you'll have to do things
+manually. To use jess-mode you should probably install the files in
+some location accessible via <B>load-path</B> (like site-lisp or
+perhaps your personal elisp repository). Otherwise, you'll have to
+tell Emacs where jess-mode lives. You might put something like <B>(setq
+load-path (cons &quot;&lt;path to jess-mode&gt;&quot; load-path)) </B>in
+your .emacs file, or wherever you keep such things. Next, you'll
+probably want to &quot;auto load&quot; the functions <B>jess-mode</B>
+and <B>run-jess</B>; add the following someplace appropriate (again,
+perhaps your .emacs file):</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<DL>
+	<DD><B>(autoload 'jess-mode &quot;jess-mode&quot; &quot;Jess Editing
+	Mode&quot; t nil)</B></DD><DD>
+	<B>(autoload 'run-jess &quot;inf-jess&quot; &quot;Inferior Jess
+	Mode&quot; t nil)</B></DD></DL>
+<P STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P STYLE="margin-bottom: 0in">You'll probably also want to take
+advantage of jess-mode's font-lock support; I do it like this:</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<DL>
+	<DD STYLE="margin-bottom: 0.2in"><B>(add-hook 'jess-mode-hook
+	#'(lambda() (turn-on-font-lock)))</B></DD></DL>
+<P STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P STYLE="margin-bottom: 0in">See the font-lock documentation for
+additional features. Finally, tell Emacs to start 'jess-mode'
+whenever you visit a Jess source file:</P>
+<ADDRESS><BR>
+</ADDRESS>
+<DL>
+	<DD STYLE="margin-bottom: 0.2in"><B>(setq auto-mode-alist (append
+	auto-mode-alist '((&quot;\\.clp$&quot; . jess-mode))))</B></DD></DL>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Running a Jess
+Process Within Emacs</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in">To run an inferior Jess process you
+must first tell <B>inf-jess</B> how Jess should be started. At a
+minimum, one does this by setting the variable <B>inferior-jess-program</B><SPAN STYLE="font-weight: medium">
+to something meaningful. Currently, this is either a string the
+evaluates to a program file (a script, say) or a function that
+supplies a list of Java virtual machine arguments. This isn't as hard
+as it might sound; here are a couple of examples:</SPAN></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">If you typically
+invoke Jess via a shell script, do something like:</P>
+<P STYLE="margin-left: 0.22in; margin-bottom: 0in"><B>(add-hook
+'inferior-jess-load-hook</B> <B>#'(lambda () (setq
+inferior-jess-program &quot;/usr/local/bin/jess&quot;)))</B></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">If instead you run
+Jess using the virtual machine directly, use something like:</P>
+<DL>
+	<DD><B>(add-hook 'inferior-jess-load-hook </B>
+	</DD><DD>
+	<B>#'(lambda () (setq inferior-jess-program </B>
+	</DD><DD>
+	<B>#'(lambda () '(&quot;-classpath&quot; &quot;.:/opt/jess/jess.jar&quot;
+	&quot;jess.Main&quot;)))))</B></DD></DL>
+<P STYLE="margin-left: 0.38in; margin-bottom: 0in">
+<BR>
+</P>
+<P STYLE="margin-bottom: 0in">Look at the documentation at the top of
+<B>inf-jess.el</B> for further explanations and examples. Once you've
+set things up correctly, evaluating the form <B>(run-jess)</B> should
+give you a buffer attached to the running Jess interpreter.</P>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR="#737b9c">
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><!-- footer table --><FONT COLOR="#ffffff"><A HREF="http://sourceforge.net/" TARGET="MAIN"><IMG SRC="http://sourceforge.net/sflogo.php?group_id=1802&amp;type=1" NAME="Graphic1" ALT="SourceForge" ALIGN=BOTTOM WIDTH=88 HEIGHT=31 BORDER=0></A></FONT>
+						</P>
+		</TD>
+		<TD>
+			<P ALIGN=CENTER><FONT COLOR="#ffffff">All trademarks and
+			copyrights on this page are properties of their respective owners.
+			Forum comments are owned by the poster. The rest is copyright
+			&copy;1999-2000 VA Linux Systems, Inc. </FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><!-- end footer table --></P>
+</BODY>
+</HTML>
