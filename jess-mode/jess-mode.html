@@ -112,7 +112,7 @@ Xemacs implementation, but would be happy to incorporate patches.</P>
 </TABLE>
 <P STYLE="margin-bottom: 0in"><BR>
 </P>
-<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Installation</FONT></FONT></P>
+<P STYLE="margin-top: 0in; page-break-after: avoid"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Installation</FONT></FONT></P>
 <P STYLE="margin-bottom: 0in">There's currently no automated
 installation process for Jess Mode, so you'll have to do things
 manually. To use jess-mode you should probably install the files in
@@ -128,7 +128,7 @@ perhaps your .emacs file):</P>
 </P>
 <DL>
 	<DD><B>(autoload 'jess-mode &quot;jess-mode&quot; &quot;Jess Editing
-	Mode&quot; t nil)</B></DD><DD STYLE="margin-bottom: 0.2in">
+	Mode&quot; t nil)</B></DD><DD STYLE="margin-bottom: 0.0in">
 	<B>(autoload 'run-jess &quot;inf-jess&quot; &quot;Inferior Jess
 	Mode&quot; t nil)</B></DD></DL>
 <P STYLE="margin-bottom: 0in">
@@ -139,7 +139,7 @@ advantage of jess-mode's font-lock support; I do it like this:</P>
 <P STYLE="margin-bottom: 0in"><BR>
 </P>
 <DL>
-	<DD STYLE="margin-bottom: 0.2in"><B>(add-hook 'jess-mode-hook
+	<DD STYLE="margin-bottom: 0.0in"><B>(add-hook 'jess-mode-hook
 	#'(lambda() (turn-on-font-lock)))</B></DD></DL>
 <P STYLE="margin-bottom: 0in">
 <BR>
@@ -147,10 +147,8 @@ advantage of jess-mode's font-lock support; I do it like this:</P>
 <P STYLE="margin-bottom: 0in">See the font-lock documentation for
 additional features. Finally, tell Emacs to start 'jess-mode'
 whenever you visit a Jess source file:</P>
-<ADDRESS STYLE="margin-bottom: 0.2in"><BR><BR>
-</ADDRESS>
 <DL>
-	<DD STYLE="margin-bottom: 0.2in"><B>(setq auto-mode-alist (append
+	<DD STYLE="margin-bottom: 0.0in"><B>(setq auto-mode-alist (append
 	auto-mode-alist '((&quot;\\.clp$&quot; . jess-mode))))</B></DD></DL>
 <P STYLE="margin-top: 0.17in; page-break-after: avoid">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=4>Running a Jess
@@ -158,7 +156,7 @@ Process Within Emacs</FONT></FONT></P>
 <P STYLE="margin-bottom: 0in">To run an inferior Jess process you
 must first tell <B>inf-jess</B> how Jess should be started. At a
 minimum, one does this by setting the variable <B>inferior-jess-program</B><SPAN STYLE="font-weight: medium">
-to something meaningful. Currently, this is either a string the
+to something meaningful. Currently, this is either a string that
 evaluates to a program file (a script, say) or a function that
 supplies a list of Java virtual machine arguments. This isn't as hard
 as it might sound; here are a couple of examples:</SPAN></P>
@@ -175,7 +173,7 @@ Jess using the virtual machine directly, use something like:</P>
 	<DD><B>(add-hook 'inferior-jess-load-hook </B>
 	</DD><DD>
 	<B>#'(lambda () (setq inferior-jess-program </B>
-	</DD><DD STYLE="margin-bottom: 0.2in">
+	</DD><DD>
 	<B>#'(lambda () '(&quot;-classpath&quot; &quot;.:/opt/jess/jess.jar&quot;
 	&quot;jess.Main&quot;)))))</B></DD></DL>
 <P STYLE="margin-left: 0.38in; margin-bottom: 0in">
