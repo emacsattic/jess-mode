@@ -7,13 +7,15 @@
 	<META NAME="AUTHOR" CONTENT="David Young">
 	<META NAME="CREATED" CONTENT="20000926;15230400">
 	<META NAME="CHANGEDBY" CONTENT="David Young">
-	<META NAME="CHANGED" CONTENT="20001004;12465200">
+	<META NAME="CHANGED" CONTENT="20001004;14262000">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
-<P ALIGN=CENTER STYLE="margin-top: 0.17in; page-break-after: avoid"><IMG SRC="file:///opt/packages/office52/share/gallery/www-graf/men@work.gif" NAME="Graphic2" ALIGN=RIGHT WIDTH=66 HEIGHT=50 BORDER=0><FONT SIZE=4><FONT FACE="Times New Roman, serif"><B>This
+<P ALIGN=CENTER STYLE="margin-top: 0.17in; page-break-after: avoid"><IMG SRC="http://jess-mode.sourceforge.net/men@work.gif" NAME="Graphic2" ALIGN=RIGHT WIDTH=66 HEIGHT=50 BORDER=0><FONT SIZE=4><FONT FACE="Times New Roman, serif"><B>This
 is </B><A HREF="http://sourceforge.net/projects/jess-mode"><B><FONT SIZE=4><FONT FACE="Times New Roman, serif">Jess
 Mode </FONT></FONT></B></A><B>- an Emacs environment for developing
 Java Expert System Shell (Jess) applications.</B></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-top: 0.17in; page-break-after: avoid"><BR><BR>
+</P>
 <P>Jess Mode is a collection of GNU Emacs Lisp files designed to
 facilitate the development of <A HREF="http://hertzberg.ca.sandia.gov/jess">Jess
 </A>applications. Currently, Jess Mode is at release 1.2 and is
@@ -77,7 +79,7 @@ Xemacs implementation, but would be happy to incorporate patches.</P>
 		<TR VALIGN=TOP>
 			<TD WIDTH=50%>
 				<DL>
-					<DD>Stable version is <A HREF="ftp://jess-mode.sourceforge.net/">here</A>.</DD></DL>
+					<DD>Stable version is <A HREF="http://sourceforge.net/projects/jess-mode">here.</A></DD></DL>
 			</TD>
 			<TD WIDTH=50%>
 				<DL>
@@ -126,7 +128,7 @@ perhaps your .emacs file):</P>
 </P>
 <DL>
 	<DD><B>(autoload 'jess-mode &quot;jess-mode&quot; &quot;Jess Editing
-	Mode&quot; t nil)</B></DD><DD>
+	Mode&quot; t nil)</B></DD><DD STYLE="margin-bottom: 0.2in">
 	<B>(autoload 'run-jess &quot;inf-jess&quot; &quot;Inferior Jess
 	Mode&quot; t nil)</B></DD></DL>
 <P STYLE="margin-bottom: 0in">
@@ -145,7 +147,7 @@ advantage of jess-mode's font-lock support; I do it like this:</P>
 <P STYLE="margin-bottom: 0in">See the font-lock documentation for
 additional features. Finally, tell Emacs to start 'jess-mode'
 whenever you visit a Jess source file:</P>
-<ADDRESS><BR>
+<ADDRESS STYLE="margin-bottom: 0.2in"><BR><BR>
 </ADDRESS>
 <DL>
 	<DD STYLE="margin-bottom: 0.2in"><B>(setq auto-mode-alist (append
@@ -173,7 +175,7 @@ Jess using the virtual machine directly, use something like:</P>
 	<DD><B>(add-hook 'inferior-jess-load-hook </B>
 	</DD><DD>
 	<B>#'(lambda () (setq inferior-jess-program </B>
-	</DD><DD>
+	</DD><DD STYLE="margin-bottom: 0.2in">
 	<B>#'(lambda () '(&quot;-classpath&quot; &quot;.:/opt/jess/jess.jar&quot;
 	&quot;jess.Main&quot;)))))</B></DD></DL>
 <P STYLE="margin-left: 0.38in; margin-bottom: 0in">
